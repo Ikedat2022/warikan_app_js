@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <h1>割り勘アプリ</h1>
+    <label for="toBeAddedAmount">追加金額:</label>
+    <input type="number" id="toBeAddedAmount">円
+    <button type="button" onclick="add();">合計金額に追加します</button>
+    <script language="JavaScript" type="text/javascript">
+      function add() {
+        let value1 = document.getElementById("toBeAddedAmount").value;
+        let value2 = document.getElementById("totalAmount").value;
+        let addTotalAmount = Number(value1) + Number(value2);
+        console.log(addTotalAmount);
+        document.getElementById("totalAmount").value = addTotalAmount;
+      }
+
+    </script>
+    <br>
+    <form id="calculator">
+      <label for="totalAmount">合計金額:</label>
+      <input type="number" id="totalAmount" value=0 required>円
+      <br>
+
+      <label for="numberOfPeople2">
+        <input type="radio" name="numberOfPeople" id="numberOfPeople2" value=2 checked>2人</label>
+      <label for="numberOfPeople3">
+        <input type="radio" name="numberOfPeople" id="numberOfPeople3" value=3>3人</label>
+      <label for="numberOfPeople4">
+        <input type="radio" name="numberOfPeople" id="numberOfPeople4" value=4>4人</label>
+
+      <br>
+      <button type="submit" onclick="test()">計算する!</button>
+      <script language="JavaScript" type="text/javascript">
+        function test() {
+          var result = window.confirm("あ？こういう計算される立場に立てよ誠意見せろやテメー\n割り勘？だりーから俺に100万円払えよ");
+          console.log("メッセージ：" + result);
+          if (result) {
+            alert("え？あ、いや冗談っすよ、、 …え、こわ、こ、こちらが結果になります。。");
+          } else {
+            alert("ふん、ビビりやがって。いい気味だぜｗ\nほら、結果くれてやるよ");
+          }
+        }
+
+      </script>
+    </form>
+    <div id="result" style="display: none;">
+      <h2>割り勘結果</h2>
+      <p>Aさんの金額: <span id="splitAmount1"></span>円です！</p>
+      <p>Bさんの金額: <span id="splitAmount2"></span>円です！</p>
+      <p>Cさんの金額: <span id="splitAmount3"></span>円です！</p>
+      <p>Dさんの金額: <span id="splitAmount4"></span>円です！</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>
